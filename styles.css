@@ -101,17 +101,17 @@ body {
     transition: transform 0.2s, color 0.2s;
 }
 
-.container-nav {
+.navbar {
     position: fixed;
     top: 5px;
-    left: 80%;
-    width: auto;
+    left: 50%;
     z-index: 1000;
+    width: auto;
     background: linear-gradient(to right, #07182b, #010322e1);
     border: 3px solid #007bff;
     border-radius: 10px;
-    padding-left: 35px;
-    padding-right: 30px;
+    padding-left: 10x;
+    padding-right: 10px;
     text-align: center;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     transition: opacity 0.5s ease, transform 0.5s ease;
@@ -119,27 +119,32 @@ body {
     transform: translateX(-50%) translateY(5px);
 }
 
+.hamburger{
+    display: none;
+}
+
 .nav-link {
     color: white;
     text-decoration: none;
 }
 
-
-.container-nav.open {
-    background: linear-gradient(to right, #07203dcc, #010322e1);
-    /* Dark background color */
+.nav-item{
+    padding-left: 10px;
 }
+
+
+.navbar.open {
+    background: linear-gradient(to right, #07203dcc, #010322e1);
+}
+
 
 .collapse:not(.show) {
     display: none;
-    /* Default hidden state for collapsed elements */
 }
 
-
-.container-nav.hidden {
+.navbar.hidden {
     opacity: 0;
     transform: translateX(-50%) translateY(-5px);
-    /* Slight vertical shift when hidden */
     pointer-events: none;
 }
 
@@ -271,6 +276,7 @@ body {
 
 @media screen and (max-width: 600px) {
 
+
     .timeline {
         margin: 50px auto;
     }
@@ -312,6 +318,7 @@ body {
 
     .navigationList{
         justify-content: center;
+        padding-left: 10px;
     }
 
     .skillImage{
@@ -328,17 +335,25 @@ body {
 }
 
 @media (max-width: 991px) {
-    .container-nav {
-        width: 100%;
-        top: 2;
+    .navbar{
+        position: fixed;
+        top: 0px;
         left: 50%;
-        height: 100%;
-        padding-left: 15px;
-        padding-right: 15px;
-        background: transparent;
-        border: none;
+        width: 95%;
+        background: linear-gradient(to right, #07182b, #010322e1);
+        border: 1px solid #007bff;
+        padding-left: 30px;
+        padding-right: 30px;
         text-align: center;
-        box-shadow: none;
-        transition: background-color 0.3s ease;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+        opacity: 0.95;
+        transform: translateX(-50%) translateY(5px);
+        backdrop-filter: blur(10px); /* Apply blur to the background */
+        -webkit-backdrop-filter: blur(10px)
+    }
+
+    .hamburger{
+        display: block;
     }
 }
